@@ -1,0 +1,63 @@
+{% extends './../../components/base.html' %}
+{% block title %}
+Add New Quiz
+{% endblock %}
+
+{% block meta%}
+<style>
+
+</style>
+{% endblock %}
+
+
+{% block content %}
+<div class="container py-5">
+    <h1>Add New Quiz</h1>
+    <div class="my-4">
+        <form method="POST">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-md-12">
+
+                    {% include './../../components/errors.html' %}
+
+                    {% if form.errors %}
+                    {% for error in form.errors %}
+                    <div class="alert alert-danger" role="alert">
+                        <strong>Error</strong>
+                        <p>
+                            {{ error }}
+                        </p>
+                    </div>
+                    {% endfor %}
+                    {% endif %}
+
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group position-relative has-icon-lef mb-4">
+                        <label for="{{form.title.id_for_label}}" class="mb-2">Title</label>
+                        {{form.title}}
+                        <!-- <div class="form-control-icon">
+                            <i class="bi bi-envelope"></i>
+                        </div> -->
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group position-relative has-icon-lef mb-4">
+                        <label for="{{form.unit.id_for_label}}" class="mb-2">Unit</label>
+                        {{form.unit}}
+                        <!-- <div class="form-control-icon">
+                            <i class="bi bi-envelope"></i>
+                        </div> -->
+                    </div>
+                </div>
+
+            </div>
+
+            <button class="btn btn-primary btn-block btn-lg shadow-lg mt-5">Submit</button>
+        </form>
+    </div>
+</div>
+
+{% endblock content %}
