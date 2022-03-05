@@ -7,7 +7,7 @@ from django.db import models
 class Course(models.Model):
     title = models.CharField( max_length=200)
     description = models.TextField(max_length=5000)
-    cost = models.IntegerField()
+    cost = models.CharField(max_length=50)
     duration = models.CharField(max_length=200)
     instructor = models.ForeignKey(User, on_delete=models.SET_NULL, blank=True, null=True)
     created_on = models.DateTimeField(auto_now_add=True)
@@ -43,7 +43,7 @@ class Question(models.Model):
 
 
 class Answer(models.Model):
-    quiz = models.ForeignKey(Quiz, on_delete=models.CASCADE)
+    question = models.ForeignKey(Question, on_delete=models.CASCADE, blank=True, null=True)
     answer = models.TextField(max_length=1000)
     correct = models.BooleanField(default=False)
     created_on = models.DateTimeField(auto_now_add=True)

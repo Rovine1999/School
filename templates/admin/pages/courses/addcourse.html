@@ -1,0 +1,93 @@
+{% extends './../../components/base.html' %}
+{% block title %}
+Add New Course
+{% endblock %}
+
+{% block meta%}
+<style>
+
+</style>
+{% endblock %}
+
+
+{% block content %}
+<div class="container py-5">
+    <h1>Add New Course</h1>
+    <div class="my-4">
+        <form method="POST">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-md-12">
+
+                    {% include './../../components/errors.html' %}
+
+                    {% if form.errors %}
+                    {% for error in form.errors %}
+                    <div class="alert alert-danger" role="alert">
+                        <strong>Error</strong>
+                        <p>
+                            {{ error }}
+                        </p>
+                    </div>
+                    {% endfor %}
+                    {% endif %}
+
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group position-relative has-icon-lef mb-4">
+                        <label for="{{form.name.id_for_label}}" class="mb-2">Title</label>
+                        {{form.title}}
+                        <!-- <div class="form-control-icon">
+                            <i class="bi bi-envelope"></i>
+                        </div> -->
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group position-relative has-icon-lef mb-4">
+                        <label for="{{form.name.id_for_label}}" class="mb-2">Cost</label>
+                        {{form.cost}}
+                        <!-- <div class="form-control-icon">
+                            <i class="bi bi-envelope"></i>
+                        </div> -->
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group position-relative has-icon-lef mb-4">
+                        <label for="{{form.name.id_for_label}}" class="mb-2">Duration</label>
+                        {{form.duration}}
+                        <!-- <div class="form-control-icon">
+                            <i class="bi bi-envelope"></i>
+                        </div> -->
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group position-relative has-icon-lef mb-4">
+                        <label for="{{form.name.id_for_label}}" class="mb-2">Instructor</label>
+                        {{form.instructor}}
+                        <!-- <div class="form-control-icon">
+                            <i class="bi bi-envelope"></i>
+                        </div> -->
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <div class="form-group position-relative has-icon-lef mb-4">
+                        <label for="{{form.name.id_for_label}}" class="mb-2">Description</label>
+                        {{form.description}}
+                        <!-- <div class="form-control-icon">
+                            <i class="bi bi-envelope"></i>
+                        </div> -->
+                    </div>
+                </div>
+
+            </div>
+
+            <button class="btn btn-primary btn-block btn-lg shadow-lg mt-5">Submit</button>
+        </form>
+    </div>
+</div>
+
+{% endblock content %}

@@ -1,6 +1,6 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
-
+from .models import *
 # Create your views here.
 
 
@@ -10,6 +10,13 @@ def home(request):
 
     }
     return render(request, template_name='home/pages/index.html', context=context)
+
+
+def courses(request):
+    context = {
+        'courses': Course.objects.all()
+    }
+    return render(request, template_name='home/pages/courses.html', context=context)
 
 
 def contactus(request):
