@@ -7,6 +7,10 @@ from .models import *
 # @login_required(login_url='login')
 def home(request):
     context = {
+        'featured_courses': Course.objects.all(),
+        'recent_courses': Course.objects.all(),
+        'popular_courses': Course.objects.all(),
+        'upcoming_courses': Course.objects.all(),
 
     }
     return render(request, template_name='home/pages/index.html', context=context)

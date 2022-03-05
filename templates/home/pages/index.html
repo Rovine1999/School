@@ -23,7 +23,7 @@ Home
     }
 
     .overlay {
-        background: rgba(0, 0, 0, 0.3);
+        background: rgba(0, 0, 0, 0.8);
         width: 100%;
         height: 100%;
         position: absolute;
@@ -59,7 +59,7 @@ Home
 
 {% block content %}
 <div class="home-hero pt-5">
-    <img src="{% static '/assets/images/housepics/img5.jpg' %}" />
+    <img src="{% static '/assets/images/coding.jpeg' %}" />
     <div class="overlay"></div>
     <div class="container">
         <h1 class="text-white display-4">
@@ -86,23 +86,24 @@ Home
 
             <div class="row my-2">
 
+                {% for course in featured_courses %}
                 <div class="col-md-4">
                     <div class="card">
-                        <img src="{% static '/assets/images/housepics/img5.jpg' %}" class="card-img-top" />
+                        <img src="{% static '/assets/images/html.png' %}" class="card-img-top" />
                         <div class="card-body">
-                            <h3 class="text-capitalize">HTML for beginners</h3>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                Aspernatur unde sunt eaque iusto molestias cupiditate
+                            <h3 class="text-capitalize title">{{course.title}}</h3>
+                            <p class="desc">
+                                {{course.description}}
                             </p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <!-- <button class="btn btn-primary">Read more</button> -->
-                                <h4>Kes 23, 500</h4>
+                                <h4>{{course.cost}}</h4>
                                 <a href="#" class="btn btn-primary">Enroll now</a>
                             </div>
                         </div>
                     </div>
                 </div>
+                {% endfor %}
 
             </div>
 
@@ -117,24 +118,24 @@ Home
 
             <div class="row my-2">
 
+                {% for course in recent_courses %}
                 <div class="col-md-4">
                     <div class="card">
-                        <img src="{% static '/assets/images/housepics/img5.jpg' %}" class="card-img-top" />
+                        <img src="{% static '/assets/images/html.png' %}" class="card-img-top" />
                         <div class="card-body">
-                            <h3 class="text-capitalize">HTML for beginners</h3>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                Aspernatur unde sunt eaque iusto molestias cupiditate
+                            <h3 class="text-capitalize title">{{course.title}}</h3>
+                            <p class="desc">
+                                {{course.description}}
                             </p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <!-- <button class="btn btn-primary">Read more</button> -->
-                                <h4>Kes 23, 500</h4>
+                                <h4>{{course.cost}}</h4>
                                 <a href="#" class="btn btn-primary">Enroll now</a>
                             </div>
                         </div>
                     </div>
                 </div>
-
+                {% endfor %}
             </div>
 
         </div>
@@ -148,24 +149,24 @@ Home
 
             <div class="row my-2">
 
+                {% for course in popular_courses %}
                 <div class="col-md-4">
                     <div class="card">
-                        <img src="{% static '/assets/images/housepics/img5.jpg' %}" class="card-img-top" />
+                        <img src="{% static '/assets/images/html.png' %}" class="card-img-top" />
                         <div class="card-body">
-                            <h3 class="text-capitalize">HTML for beginners</h3>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                Aspernatur unde sunt eaque iusto molestias cupiditate
+                            <h3 class="text-capitalize title">{{course.title}}</h3>
+                            <p class="desc">
+                                {{course.description}}
                             </p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <!-- <button class="btn btn-primary">Read more</button> -->
-                                <h4>Kes 23, 500</h4>
+                                <h4>{{course.cost}}</h4>
                                 <a href="#" class="btn btn-primary">Enroll now</a>
                             </div>
                         </div>
                     </div>
                 </div>
-
+                {% endfor %}
             </div>
 
         </div>
@@ -179,23 +180,24 @@ Home
 
             <div class="row my-2">
 
+                {% for course in upcoming_courses %}
                 <div class="col-md-4">
                     <div class="card">
-                        <img src="{% static '/assets/images/housepics/img5.jpg' %}" class="card-img-top" />
+                        <img src="{% static '/assets/images/html.png' %}" class="card-img-top" />
                         <div class="card-body">
-                            <h3 class="text-capitalize">HTML for beginners</h3>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                Aspernatur unde sunt eaque iusto molestias cupiditate
+                            <h3 class="text-capitalize title">{{course.title}}</h3>
+                            <p class="desc">
+                                {{course.description}}
                             </p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <!-- <button class="btn btn-primary">Read more</button> -->
-                                <h4>Kes 23, 500</h4>
-                                <a href="#" class="btn btn-primary">Enroll now</a>
+                                <h4>...</h4>
+                                <a href="#" class="btn btn-primary disabled">Enroll now</a>
                             </div>
                         </div>
                     </div>
                 </div>
+                {% endfor %}
 
             </div>
 
