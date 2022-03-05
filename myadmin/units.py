@@ -31,7 +31,20 @@ def addunit(request):
 
 
 def updateunit(request, pk):
-    form = UnitForm()
+    unit = Unit.objects.get(id=pk)
+    initial = {
+        'title': unit.title,
+        'course': unit.course,
+    }
+    form = UnitForm(initial=initial)
+
+    if request.method == 'POST':
+        form = UnitForm(request.POST, instance=unit)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'The unit was updated successfully')
+        else:
+            messages.error(request, 'Updating the unit failed')
 
     context = {
         "form": form,

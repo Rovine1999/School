@@ -43,7 +43,11 @@ Units
                         <td> {{unit.course.title}} </td>
                         <td>
                             <span class="me-4 action-icon"><i class="fas fa-eye text-primary"></i></span>
-                            <span class="me-4 action-icon"><i class="fas fa-pencil text-warning"></i></span>
+                            <a href="{% url 'admin-units-update' pk=unit.id %}">
+                                <span class="me-4 action-icon">
+                                    <i class="fas fa-pencil text-warning"></i>
+                                </span>
+                            </a>
                             <a href="{% url 'admin-units-delete' pk=unit.id %}">
                                 <span class="me-4 action-icon">
                                     <i class="fas fa-trash text-danger"></i>
