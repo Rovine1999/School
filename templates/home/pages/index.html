@@ -40,26 +40,6 @@ Home
         position: relative;
     }
 
-    .card-img-top {
-        position: absolute;
-        top: 6px;
-        left: 0;
-        width: 100%;
-    }
-
-    .card-img img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-
-    .card-img-bottom {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        background-color: rgba(0, 0, 0, 0.164);
-    }
 
     .avatar {
         min-width: 50px;
@@ -69,91 +49,171 @@ Home
         border-radius: 50%;
         background: rgb(224, 233, 255);
     }
+
+    .card-img-top {
+        height: 250px;
+        max-height: 250px;
+    }
 </style>
 {% endblock %}
 
 {% block content %}
-<!-- <div class="home-hero pt-5">
+<div class="home-hero pt-5">
     <img src="{% static '/assets/images/housepics/img5.jpg' %}" />
     <div class="overlay"></div>
     <div class="container">
         <h1 class="text-white display-4">
-            Welcome to SMS API
+            Welcome to CourseShool
         </h1>
     </div>
-</div> -->
+</div>
+
+<div class="container py-5">
+    <h2 class="text-center">
+        About Us
+    </h2>
+    <p class="text-center">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Et maiores ratione voluptates <br>
+        sint recusandae repudiandae harum. Numquam temporibus, <br>
+        quaerat error aperiam aspernatur provident commodi minus veniam ipsum reiciendis voluptas magni?
+    </p>
+
+    <div class="mt-5">
+        <h3>
+            Featured Courses
+        </h3>
+        <div class="featured">
+
+            <div class="row my-2">
+
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="{% static '/assets/images/housepics/img5.jpg' %}" class="card-img-top" />
+                        <div class="card-body">
+                            <h3 class="text-capitalize">HTML for beginners</h3>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                Aspernatur unde sunt eaque iusto molestias cupiditate
+                            </p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <!-- <button class="btn btn-primary">Read more</button> -->
+                                <h4>Kes 23, 500</h4>
+                                <a href="#" class="btn btn-primary">Enroll now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <div>
+        <h3>
+            Recent Courses
+        </h3>
+        <div class="recent">
+
+            <div class="row my-2">
+
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="{% static '/assets/images/housepics/img5.jpg' %}" class="card-img-top" />
+                        <div class="card-body">
+                            <h3 class="text-capitalize">HTML for beginners</h3>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                Aspernatur unde sunt eaque iusto molestias cupiditate
+                            </p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <!-- <button class="btn btn-primary">Read more</button> -->
+                                <h4>Kes 23, 500</h4>
+                                <a href="#" class="btn btn-primary">Enroll now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <div>
+        <h3>
+            Popular Courses
+        </h3>
+        <div class="popular">
+
+            <div class="row my-2">
+
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="{% static '/assets/images/housepics/img5.jpg' %}" class="card-img-top" />
+                        <div class="card-body">
+                            <h3 class="text-capitalize">HTML for beginners</h3>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                Aspernatur unde sunt eaque iusto molestias cupiditate
+                            </p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <!-- <button class="btn btn-primary">Read more</button> -->
+                                <h4>Kes 23, 500</h4>
+                                <a href="#" class="btn btn-primary">Enroll now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <div>
+        <h3>
+            Upcoming Courses
+        </h3>
+        <div class="upcoming">
+
+            <div class="row my-2">
+
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="{% static '/assets/images/housepics/img5.jpg' %}" class="card-img-top" />
+                        <div class="card-body">
+                            <h3 class="text-capitalize">HTML for beginners</h3>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                Aspernatur unde sunt eaque iusto molestias cupiditate
+                            </p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <!-- <button class="btn btn-primary">Read more</button> -->
+                                <h4>Kes 23, 500</h4>
+                                <a href="#" class="btn btn-primary">Enroll now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<div class="container mt-5">
+    <h2 class="text-center">Why Us</h2>
+    {% include './../components/corevalues.html' %}
+</div>
 
 <div class="container my-5">
-    <div>
-        <h2>Adming OSA</h2>
-    </div>
-    <div class="row">
-
-        <div class="col-md-4">
-            <div class="card p-2 p-md-3">
-                <div class="row py-3">
-                    <div class="col-8">
-                        <h6>Contacts</h6>
-                        <h4>{{contacts}}</h4>
-                    </div>
-                    <div class="col-4 d-flex align-items-center justify-content-end">
-                        <i class="fas fa-user fa-2x"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-4">
-            <div class="card p-2 p-md-3">
-                <div class="row py-3">
-                    <div class="col-8">
-                        <h6>Groups</h6>
-                        <h4>{{groups}}</h4>
-                    </div>
-                    <div class="col-4 d-flex align-items-center justify-content-end">
-                        <i class="fas fa-users fa-2x"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-4">
-            <div class="card p-2 p-md-3">
-                <div class="row py-3">
-                    <div class="col-8">
-                        <h6>Campaigns</h6>
-                        <h4>{{campaigns}}</h4>
-                    </div>
-                    <div class="col-4 d-flex align-items-center justify-content-end">
-                        <i class="fas fa-sms fa-2x"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-4">
-            <div class="card p-2 p-md-3">
-                <div class="row py-3">
-                    <div class="col-8">
-                        <h6>Sent Campaigns</h6>
-                        <h4>{{sent_campaigns}}</h4>
-                    </div>
-                    <div class="col-4 d-flex align-items-center justify-content-end">
-                        <i class="fas fa-envelope-open fa-2x"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-    </div>
+    <h2 class="text-center mb-3">What people say about Us</h2>
+    {% include './../components/reviews.html' %}
 </div>
 
 
 
 {% endblock content %}
-
-Apartments for sale for rent
-bedsitters
-Single rooms
-Double rooms
