@@ -1,0 +1,119 @@
+<nav class="navbar navbar-expand-lg navbar-white bg-white sticky-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="{% url 'home' %}">SMS API</a>
+        <button class="navbar-toggler outline-none text-black" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <!-- <span class="navbar-toggler-icon"></span> -->
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse bg-white" id="navbarSupportedContent">
+            <ul class="navbar-nav m-auto p-4 p-md-0  mb-2 mb-lg-0">
+
+                {% if user.is_authenticated %}
+                <li class="nav-item p-0 p-xs-4">
+                    <a class="nav-link active" aria-current="page" href="{% url 'home' %}">
+                        <span>
+                            <i class="fas fa-home"></i>
+                        </span>
+                        <span>
+                            Home
+                        </span>
+                    </a>
+                </li>
+
+
+                <li class="nav-item ms-3">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-braille"></i>
+                        <span class="ms-">
+                            Courses
+                        </span>
+                    </a>
+                </li>
+
+                <li class="nav-item ms-3">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-info-circle"></i>
+                        <span class="ms-">
+                            About
+                        </span>
+                    </a>
+                </li>
+
+                <li class="nav-item ms-3">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <span>
+                            <i class="fas fa-envelope"></i>
+                        </span>
+                        <span class="">
+                            Contact Us
+                        </span>
+                    </a>
+                    <!-- <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+
+                        <li>
+                            <a class="dropdown-item" href="#">
+                                <i class="fas fa-envelope"></i>
+                                <span class="ms-4">
+                                    Create SMS Campaign
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#">
+                                <i class="far fa-envelope"></i>
+                                <span class="ms-4">
+                                    View SMS Campaigns
+                                </span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item" href="#">
+                                <i class="fas fa-envelope-open"></i>
+                                <span class="ms-4">
+                                    Send SMS
+                                </span>
+                            </a>
+                        </li>
+
+                    </ul> -->
+                </li>
+
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'logout' %}">
+                        <i class="fas fa-sign-out"></i>
+                        <span class="ms-">
+                            Logout
+                        </span>
+                    </a>
+                </li>
+                {% else %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'login' %}">
+                        <i class="fas fa-sign-in"></i>
+                        <span class="ms-">
+                            Login
+                        </span>
+                    </a>
+                </li>
+                {% endif %}
+
+
+
+            </ul>
+            <!-- <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form> -->
+        </div>
+    </div>
+</nav>

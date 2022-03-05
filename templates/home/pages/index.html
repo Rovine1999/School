@@ -1,0 +1,159 @@
+{% extends './../../components/base.html' %}
+{% load static %}
+{% block title %}
+Home
+{% endblock %}
+
+{% block meta %}
+<style>
+    .home-hero {
+        height: 70vh;
+        position: relative;
+
+    }
+
+    .home-hero img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -2;
+    }
+
+    .overlay {
+        background: rgba(0, 0, 0, 0.3);
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+
+    .card-img {
+        width: 100%;
+        overflow: hidden;
+        max-height: 250px;
+        background: rgb(224, 233, 255);
+        position: relative;
+    }
+
+    .card-img-top {
+        position: absolute;
+        top: 6px;
+        left: 0;
+        width: 100%;
+    }
+
+    .card-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .card-img-bottom {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.164);
+    }
+
+    .avatar {
+        min-width: 50px;
+        min-height: 50px;
+        max-width: 50px;
+        max-height: 50px;
+        border-radius: 50%;
+        background: rgb(224, 233, 255);
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<!-- <div class="home-hero pt-5">
+    <img src="{% static '/assets/images/housepics/img5.jpg' %}" />
+    <div class="overlay"></div>
+    <div class="container">
+        <h1 class="text-white display-4">
+            Welcome to SMS API
+        </h1>
+    </div>
+</div> -->
+
+<div class="container my-5">
+    <div>
+        <h2>Adming OSA</h2>
+    </div>
+    <div class="row">
+
+        <div class="col-md-4">
+            <div class="card p-2 p-md-3">
+                <div class="row py-3">
+                    <div class="col-8">
+                        <h6>Contacts</h6>
+                        <h4>{{contacts}}</h4>
+                    </div>
+                    <div class="col-4 d-flex align-items-center justify-content-end">
+                        <i class="fas fa-user fa-2x"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card p-2 p-md-3">
+                <div class="row py-3">
+                    <div class="col-8">
+                        <h6>Groups</h6>
+                        <h4>{{groups}}</h4>
+                    </div>
+                    <div class="col-4 d-flex align-items-center justify-content-end">
+                        <i class="fas fa-users fa-2x"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card p-2 p-md-3">
+                <div class="row py-3">
+                    <div class="col-8">
+                        <h6>Campaigns</h6>
+                        <h4>{{campaigns}}</h4>
+                    </div>
+                    <div class="col-4 d-flex align-items-center justify-content-end">
+                        <i class="fas fa-sms fa-2x"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card p-2 p-md-3">
+                <div class="row py-3">
+                    <div class="col-8">
+                        <h6>Sent Campaigns</h6>
+                        <h4>{{sent_campaigns}}</h4>
+                    </div>
+                    <div class="col-4 d-flex align-items-center justify-content-end">
+                        <i class="fas fa-envelope-open fa-2x"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+
+
+{% endblock content %}
+
+Apartments for sale for rent
+bedsitters
+Single rooms
+Double rooms

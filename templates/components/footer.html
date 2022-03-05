@@ -1,0 +1,147 @@
+{% load static %}
+
+<footer class="footer py-5 text-white">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <h4 class="text-white mb-3">SMS API</h4>
+                <p class="mb-5">
+                    SMS API is a simple and easy to use API for sending SMS messages.
+                    It uses the <a href="https://pushbullet.com" target="_blank">Pushbullet</a> API to send SMS
+                    messages.
+                </p>
+                <div class="d-flex justify-content-start">
+                    <a href="#" class="text-white me-5">
+                        <i class="fab fa-facebook-square fa-1x"></i>
+                    </a>
+
+                    <a href="#" class="text-white me-5">
+                        <i class="fab fa-twitter fa-1x"></i>
+                    </a>
+
+                    <a href="#" class="text-white me-5">
+                        <i class="fab fa-instagram fa-1x"></i>
+                    </a>
+
+                    <a href="#" class="text-white me-5">
+                        <i class="fab fa-whatsapp fa-1x"></i>
+                    </a>
+
+                </div>
+            </div>
+            <div class="col-md-3">
+                <h4 class="text-white mb-3">Quick Links</h4>
+                <div>
+                    <ul class="list-unstyled">
+                        <li class="mb-3">
+                            <a href="{% url 'home' %}" class="text-white">Home</a>
+                        </li>
+                        <li class="mb-3">
+                            <a href="#" class="text-white">About</a>
+                        </li>
+                        <li class="mb-3">
+                            <a href="#" class="text-white">Services</a>
+                        </li>
+                        <li class="mb-3">
+                            <a href="#" class="text-white">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <h4 class="text-white mb-3">Contact Info</h4>
+
+                <div>
+                    <!-- Contact info -->
+                    <ul class="list-unstyled">
+                        <li class="mb-3">
+                            <i class="fas fa-map-marker-alt fa-1x text-white"></i>
+                            <span class="text-white">
+                                <span>
+                                    Nairobi, Kenya
+                                </span>
+                            </span>
+                        </li>
+                        <li class="mb-3">
+                            <i class="fas fa-phone fa-1x text-white"></i>
+                            <span class="text-white">
+                                <span>
+                                    +254 7 06 522 473
+                                </span>
+                            </span>
+                        </li>
+
+                        <li class="mb-3">
+                            <i class="fas fa-envelope fa-1x text-white"></i>
+                            <span class="text-white">
+                                <span>
+                                    support@livesoftwaredeveloper.com
+                                </span>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="col-md-3">
+                <h4 class="text-white mb-3">NewsLetters</h4>
+                <p class="text-white mb-3">
+                    Sign Up for Our Newsletter to get Latest Updates and Offers.
+                    Subscribe to receive news in your inbox.
+                </p>
+                <div>
+                    <form action="" method="POST" class="form">
+                        {% csrf_token %}
+                        <div class="form-group position-relative has-icon-left mb-4">
+                            <input type="text" class="form-control form-control-xl shadow-none" placeholder="Email">
+                            <div class="form-control-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary btn-block btn-lg shadow-lg mt-2">SUBSCRIBE</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<div class="bg-whit py-3">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 d-flex align-items-center">
+                &copy; 2022 Copyright. All right reserved
+            </div>
+            <div class="col-md-4 d-flex align-items-center">
+                Developed by &nbsp;
+                <a href="https://www.livesoftwaredeveloper.com" target="_blank">
+                    Live Software
+                    Developer
+                </a>
+            </div>
+            <div class="col-md-4 d-flex align-items-center">
+                <ul class="list-unstyled d-flex justify-content-between w-100 align-items-center h-100 m-0 p-0">
+                    <li class="me">
+                        <a href="#" class="text-dark">Terms & Conditions</a>
+                    </li>
+                    <li class="me">
+                        <a href="#" class="text-dark">Privacy Policy</a>
+                    </li>
+                    <li class="me">
+                        <a href="#" class="text-dark">Cookie Policy</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="{% static 'assets/vendors/jquery/jquery.min.js' %}"></script>
+<script src="{% static 'assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js' %}"></script>
+<script src="{% static 'assets/js/bootstrap.bundle.min.js' %}"></script>
+
+<script src="{% static 'assets/vendors/apexcharts/apexcharts.js' %}"></script>
+<script src="{% static 'assets/js/pages/dashboard.js' %}"></script>
+
+<script src="{% static 'assets/js/mazer.js' %}"></script>
+
+{% block scripts %}{% endblock %}
