@@ -1,11 +1,20 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 from .models import *
+from django.http import HttpResponse, Http404,HttpResponseRedirect
+from .email import send_welcome_email
 # Create your views here.
 
 
 # @login_required(login_url='login')
 def home(request):
+    if request.method == 'POST':
+            email = request.POST.get('email')
+            recipient = NewsLetterRecipients(email =email)
+            recipient.save()
+            send_welcome_email(email)
+            HttpResponseRedirect('home')
+
     context = {
         'featured_courses': Course.objects.all(),
         'recent_courses': Course.objects.all(),

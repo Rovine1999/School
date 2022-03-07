@@ -37,6 +37,8 @@ class File(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now_add=True)
 
+    def __str__(self):
+        return self.unit
 
 class Quiz(models.Model):
     title = models.TextField(max_length=300, blank=True, null=True)
@@ -44,6 +46,8 @@ class Quiz(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now_add=True)
 
+    def __str__(self):
+        return self.title
 
 class Question(models.Model):
     quiz = models.ForeignKey(Quiz, on_delete=models.CASCADE)
@@ -51,6 +55,8 @@ class Question(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now_add=True)
 
+    def __str__(self):
+        return self.quiz
 
 class Answer(models.Model):
     question = models.ForeignKey(Question, on_delete=models.CASCADE, blank=True, null=True)
@@ -58,3 +64,9 @@ class Answer(models.Model):
     correct = models.BooleanField(default=False)
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.question
+
+class NewsLetterRecipients(models.Model):
+    email = models.EmailField()
