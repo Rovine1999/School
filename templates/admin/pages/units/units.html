@@ -4,7 +4,20 @@ Units
 {% endblock %}
 
 {% block meta%}
-<style></style>
+<style>
+    .course-image {
+        max-width: 200px;
+        width: 200px;
+        height: 200px;
+        overflow: hidden;
+        background-color: #aaaaaa60;
+    }
+
+    .course-image img {
+        max-width: 100%;
+        object-fit: cover;
+    }
+</style>
 {% endblock %}
 
 
@@ -30,6 +43,7 @@ Units
                 <thead>
                     <tr>
                         <th class="custom-th-id">ID</th>
+                        <th class="custom-th">Banner Image</th>
                         <th class="custom-th">Title</th>
                         <th class="custom-th">Course</th>
                         <th class="custom-th">Actions</th>
@@ -39,6 +53,11 @@ Units
                     {% for unit in units %}
                     <tr>
                         <td> {{unit.id}} </td>
+                        <td>
+                            <div class="course-image">
+                                <img src="/media/{{unit.image}}" alt="{{unit.title}}">
+                            </div>
+                        </td>
                         <td> {{unit.title}} </td>
                         <td> {{unit.course.title}} </td>
                         <td>

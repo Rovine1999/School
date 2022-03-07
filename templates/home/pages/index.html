@@ -50,10 +50,10 @@ Home
         background: rgb(224, 233, 255);
     }
 
-    .card-img-top {
+    /* .card-img-top {
         height: 250px;
         max-height: 250px;
-    }
+    } */
 </style>
 {% endblock %}
 
@@ -89,7 +89,9 @@ Home
                 {% for course in featured_courses %}
                 <div class="col-md-4">
                     <div class="card">
-                        <img src="{% static '/assets/images/html.png' %}" class="card-img-top" />
+                        <div class="image-top py-2">
+                            <img src="/media/{{course.image}}" alt="{{course.title}}" class="card-img-top" />
+                        </div>
                         <div class="card-body">
                             <h3 class="text-capitalize title">{{course.title}}</h3>
                             <p class="desc">
@@ -121,7 +123,9 @@ Home
                 {% for course in recent_courses %}
                 <div class="col-md-4">
                     <div class="card">
-                        <img src="{% static '/assets/images/html.png' %}" class="card-img-top" />
+                        <div class="image-top py-2">
+                            <img src="/media/{{course.image}}" alt="{{course.title}}" class="card-img-top" />
+                        </div>
                         <div class="card-body">
                             <h3 class="text-capitalize title">{{course.title}}</h3>
                             <p class="desc">
@@ -152,7 +156,9 @@ Home
                 {% for course in popular_courses %}
                 <div class="col-md-4">
                     <div class="card">
-                        <img src="{% static '/assets/images/html.png' %}" class="card-img-top" />
+                        <div class="image-top py-2">
+                            <img src="/media/{{course.image}}" alt="{{course.title}}" class="card-img-top" />
+                        </div>
                         <div class="card-body">
                             <h3 class="text-capitalize title">{{course.title}}</h3>
                             <p class="desc">
@@ -183,7 +189,9 @@ Home
                 {% for course in upcoming_courses %}
                 <div class="col-md-4">
                     <div class="card">
-                        <img src="{% static '/assets/images/html.png' %}" class="card-img-top" />
+                        <div class="image-top py-2">
+                            <img src="/media/{{course.image}}" alt="{{course.title}}" class="card-img-top" />
+                        </div>
                         <div class="card-body">
                             <h3 class="text-capitalize title">{{course.title}}</h3>
                             <p class="desc">

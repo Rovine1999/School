@@ -26,7 +26,7 @@ def addcourse(request):
     form = CourseForm()
 
     if request.method == 'POST':
-        form = CourseForm(request.POST)
+        form = CourseForm(request.POST, request.FILES)
         if form.is_valid():
             messages.success(request, 'The course was added successfully')
             course = form.save()
@@ -36,6 +36,7 @@ def addcourse(request):
 
     context = {
         "form": form,
+        'update': False
     }
     return render(request, template_name='admin/pages/courses/addcourse.html', context=context)
 
@@ -52,7 +53,7 @@ def updatecourse(request, pk):
     form = CourseForm(initial=initial)
 
     if request.method == 'POST':
-        form = CourseForm(request.POST, instance=course)
+        form = CourseForm(request.POST, request.FILES, instance=course)
         if form.is_valid():
             form.save()
             messages.success(request, 'The course was updated successfully')
@@ -61,6 +62,7 @@ def updatecourse(request, pk):
 
     context = {
         "form": form,
+        'update': True
     }
     return render(request, template_name='admin/pages/courses/addcourse.html', context=context)
 

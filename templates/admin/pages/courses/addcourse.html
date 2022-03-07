@@ -1,6 +1,10 @@
 {% extends './../../components/base.html' %}
 {% block title %}
+{% if update == true %}
+Update Course
+{% else %}
 Add New Course
+{% endif %}
 {% endblock %}
 
 {% block meta%}
@@ -12,9 +16,15 @@ Add New Course
 
 {% block content %}
 <div class="container py-5">
-    <h1>Add New Course</h1>
+    <h1>
+        {% if update == true %}
+        Update Course
+        {% else %}
+        Add New Course
+        {% endif %}
+    </h1>
     <div class="my-4">
-        <form method="POST">
+        <form method="POST" enctype="multipart/form-data">
             {% csrf_token %}
             <div class="row">
                 <div class="col-md-12">
@@ -83,9 +93,25 @@ Add New Course
                     </div>
                 </div>
 
+                <div class="col-md-4">
+                    <div class="form-group position-relative has-icon-lef mb-4">
+                        <label for="{{form.image.id_for_label}}" class="mb-2">Banner Image</label>
+                        {{form.image}}
+                        <!-- <div class="form-control-icon">
+                            <i class="bi bi-envelope"></i>
+                        </div> -->
+                    </div>
+                </div>
+
             </div>
 
-            <button class="btn btn-primary btn-block btn-lg shadow-lg mt-5">Submit</button>
+            <button class="btn btn-primary btn-block btn-lg shadow-lg mt-5">
+                {% if update == True %}
+                Update Course
+                {% else %}
+                Submit
+                {% endif %}
+            </button>
         </form>
     </div>
 </div>

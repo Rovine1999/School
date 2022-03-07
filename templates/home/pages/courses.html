@@ -23,7 +23,9 @@ RMS | FAQs
 
         <div class="col-md-4">
             <div class="card">
-                <img src="{% static '/assets/images/housepics/img5.jpg' %}" class="card-img-top" />
+                <div class="image-top py-2">
+                    <img src="/media/{{course.image}}" alt="{{course.title}}" class="card-img-top" />
+                </div>
                 <div class="card-body">
                     <h3 class="text-capitalize title">{{course.title}}</h3>
                     <p class="desc">

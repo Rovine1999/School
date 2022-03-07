@@ -16,7 +16,7 @@ def addunit(request):
     form = UnitForm()
 
     if request.method == 'POST':
-        form = UnitForm(request.POST)
+        form = UnitForm(request.POST, request.FILES)
         if form.is_valid():
             messages.success(request, 'The unit was added successfully')
             unit = form.save()
@@ -26,6 +26,7 @@ def addunit(request):
 
     context = {
         "form": form,
+        'update': False
     }
     return render(request, template_name='admin/pages/units/addunit.html', context=context)
 
@@ -39,7 +40,7 @@ def updateunit(request, pk):
     form = UnitForm(initial=initial)
 
     if request.method == 'POST':
-        form = UnitForm(request.POST, instance=unit)
+        form = UnitForm(request.POST, request.FILES, instance=unit)
         if form.is_valid():
             form.save()
             messages.success(request, 'The unit was updated successfully')
@@ -48,6 +49,7 @@ def updateunit(request, pk):
 
     context = {
         "form": form,
+        'update': True
     }
     return render(request, template_name='admin/pages/units/addunit.html', context=context)
 

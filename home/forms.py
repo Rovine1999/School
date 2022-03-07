@@ -21,13 +21,15 @@ class CourseForm(forms.ModelForm):
         widget=forms.TextInput(
             attrs={'class': 'form-control form-control-xl shadow-none', 'placeholder': 'Duration Eg 3 Months'}),
         label='Duration')
+    # image = forms.ImageField(attrs={'class': 'form-control form-control-xl shadow-none'})
 
     class Meta:
         model = Course
-        fields = ['title', 'description', 'cost', 'duration', 'instructor']
+        fields = ['title', 'description', 'cost', 'duration', 'instructor', 'image']
 
         widgets = {
             'instructor': forms.Select(attrs={'class': 'form-control form-control-xl shadow-none'}),
+            # 'image': forms.ImageField(attrs={'class': 'form-control form-control-xl shadow-none'})
         }
 
 
@@ -35,10 +37,11 @@ class UnitForm(forms.ModelForm):
     title = forms.CharField(
         widget=forms.TextInput(attrs={'class': 'form-control form-control-xl shadow-none', 'placeholder': 'Unit Title'}),
         label='Title')
+    # image = forms.ImageField(attrs={'class': 'form-control form-control-xl shadow-none'})
 
     class Meta:
         model = Unit
-        fields = ['title', 'course']
+        fields = ['title', 'image', 'course']
 
         widgets = {
             'course': forms.Select(attrs={'class': 'form-control form-control-xl shadow-none'}),
