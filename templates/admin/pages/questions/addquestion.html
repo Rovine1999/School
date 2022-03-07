@@ -1,6 +1,6 @@
 {% extends './../../components/base.html' %}
 {% block title %}
-Add New Answer
+Add New Question
 {% endblock %}
 
 {% block meta%}
@@ -12,7 +12,7 @@ Add New Answer
 
 {% block content %}
 <div class="container py-5">
-    <h1>Add New Answer</h1>
+    <h1>Add New Question</h1>
     <div class="my-4">
         <form method="POST">
             {% csrf_token %}
@@ -45,8 +45,8 @@ Add New Answer
 
                 <div class="col-md-6">
                     <div class="form-group position-relative has-icon-lef mb-4">
-                        <label for="{{form.unit.id_for_label}}" class="mb-2">Question</label>
-                        {{form.question}}
+                        <label for="{{form.unit.id_for_label}}" class="mb-2">Quiz</label>
+                        {{form.quiz}}
                         <!-- <div class="form-control-icon">
                             <i class="bi bi-envelope"></i>
                         </div> -->

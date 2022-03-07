@@ -1,6 +1,6 @@
 {% extends './../../components/base.html' %}
 {% block title %}
-Answers
+Questions
 {% endblock %}
 
 {% block meta%}
@@ -13,9 +13,9 @@ Answers
 <div class="container py-5">
 
     <div class="d-flex align-items-center justify-content-between">
-        <h1>Answers</h1>
-        <a href="{% url 'admin-answers-add' %}" class="btn btn-small btn-primary">
-            Add answer
+        <h1>Questions</h1>
+        <a href="{% url 'admin-questions-add' %}" class="btn btn-small btn-primary">
+            Add question
         </a>
     </div>
 
@@ -31,24 +31,24 @@ Answers
                     <tr>
                         <th class="custom-th-id">ID</th>
                         <th class="custom-th">Title</th>
-                        <th class="custom-th">Question</th>
+                        <th class="custom-th">Quiz</th>
                         <th class="custom-th">Actions</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {% for answer in answers %}
+                    {% for question in questions %}
                     <tr>
-                        <td> {{answer.id}} </td>
-                        <td> {{answer.title}} </td>
-                        <td> {{answer.question.title}} </td>
+                        <td> {{question.id}} </td>
+                        <td> {{question.title}} </td>
+                        <td> {{question.quiz.title}} </td>
                         <td>
                             <span class="me-4 action-icon"><i class="fas fa-eye text-primary"></i></span>
-                            <a href="{% url 'admin-answers-update' pk=answer.id %}">
+                            <a href="{% url 'admin-questions-update' pk=question.id %}">
                                 <span class="me-4 action-icon">
                                     <i class="fas fa-pencil text-warning"></i>
                                 </span>
                             </a>
-                            <a href="{% url 'admin-answers-delete' pk=answer.id %}">
+                            <a href="{% url 'admin-questions-delete' pk=question.id %}">
                                 <span class="me-4 action-icon">
                                     <i class="fas fa-trash text-danger"></i>
                                 </span>

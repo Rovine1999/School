@@ -1,0 +1,92 @@
+<nav class="navbar navbar-expand-lg navbar-white bg-white sticky-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="{% url 'home' %}">CourseShool</a>
+        <button class="navbar-toggler outline-none text-black" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <!-- <span class="navbar-toggler-icon"></span> -->
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse bg-white" id="navbarSupportedContent">
+            <ul class="navbar-nav m-auto p-4 p-md-0  mb-2 mb-lg-0">
+
+                {% if user.is_authenticated %}
+                <li class="nav-item p-0 p-xs-4">
+                    <a class="nav-link active" aria-current="page" href="{% url 'dashboard' %}">
+                        <span>
+                            <i class="fas fa-tachometer-alt"></i>
+                        </span>
+                        <span>
+                            Dashboard
+                        </span>
+                    </a>
+                </li>
+
+
+                <li class="nav-item ms-3">
+                    <a class="nav-link" href="{% url 'admin-courses' %}">
+                        <i class="fas fa-braille"></i>
+                        <span class="ms-">
+                            Courses
+                        </span>
+                    </a>
+                </li>
+
+                <li class="nav-item ms-3">
+                    <a class="nav-link" href="{% url 'admin-units' %}">
+                        <i class="fab fa-buromobelexperte"></i>
+                        <span class="ms-">
+                            Units
+                        </span>
+                    </a>
+                </li>
+
+                <li class="nav-item ms-3">
+                    <a class="nav-link" href="{% url 'admin-quizzes' %}">
+                        <span>
+                            <i class="fab fa-question"></i>
+                        </span>
+                        <span class="">
+                            Quizzes
+                        </span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'home' %}">
+                        <i class="fas fa-tachometer"></i>
+                        <span class="ms-">
+                            Go to User
+                        </span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'logout' %}">
+                        <i class="fas fa-sign-out"></i>
+                        <span class="ms-">
+                            Logout
+                        </span>
+                    </a>
+                </li>
+                {% else %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'login' %}">
+                        <i class="fas fa-sign-in"></i>
+                        <span class="ms-">
+                            Login
+                        </span>
+                    </a>
+                </li>
+                {% endif %}
+
+
+
+            </ul>
+            <!-- <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form> -->
+        </div>
+    </div>
+</nav>
