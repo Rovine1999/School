@@ -8,7 +8,7 @@ Application that allow users to apply for courses and units in an instituition.
 
 #### Setup/Installation Requirements
 
-1. The first thing to do is to clone the repository: $ git clonehttps://github.com/Rovine1999/School.git
+1. The first thing to do is to clone the repository: $ git clone https://github.com/Rovine1999/School.git
 2. $ cd school
 3. Create a virtual environment to install dependencies in and activate it:
 
@@ -22,7 +22,7 @@ Application that allow users to apply for courses and units in an instituition.
 
 7. (virtual)$ cd School
 8. (virtual)$ python manage.py runserver
-   And navigate to http://127.0.0.1:8000/School/.
+   And navigate to http://127.0.0.1:8000/
 
 In order to test the purchase flows, fill in the account details in project/views.py to match your SANDBOX developer credentials.
 
