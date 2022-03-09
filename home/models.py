@@ -1,6 +1,7 @@
 from email.mime import image
 from django.contrib.auth.models import User
 from django.db import models
+from cloudinary.models import CloudinaryField
 
 # Create your models here.
 
@@ -13,7 +14,7 @@ class Course(models.Model):
     instructor = models.ForeignKey(User, on_delete=models.SET_NULL, blank=True, null=True)
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now_add=True)
-    image = models.ImageField(upload_to='images/', blank=True, null=True)
+    image = CloudinaryField('image')
 
     def __str__(self):
         return self.title
@@ -24,7 +25,7 @@ class Unit(models.Model):
     title = models.CharField(max_length=3000)
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now_add=True)
-    image = models.ImageField(upload_to='images/', blank=True, null=True)
+    image = CloudinaryField('image')
 
     def __str__(self):
         return self.title
@@ -33,7 +34,7 @@ class Unit(models.Model):
 class File(models.Model):
     unit = models.ForeignKey(Unit, on_delete=models.CASCADE)
     file_name = models.CharField(max_length=500)
-    file = models.FileField(upload_to='files/')
+    file = CloudinaryField('image')
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now_add=True)
 
