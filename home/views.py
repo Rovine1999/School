@@ -33,24 +33,24 @@ def courses(request):
 
 
 def contactus(request):
-    return render(request, template_name='home/pages/contact.html', context={})
+    return render(request, template_name='home/pages/contact.html')
 
 
 def aboutus(request):
-    return render(request, template_name='home/pages/about.html', context={})
+    return render(request, template_name='home/pages/about.html')
 
 
 def faq(request):
-    return render(request, template_name='home/pages/faq.html', context={})
+    return render(request, template_name='home/pages/faq.html')
 
 
 def notfound(request, exception):
-    return render(request, template_name='errors/pages/404.html', context={})
+    return render(request, template_name='errors/pages/404.html')
 
 
 def internalservererror(request):
-    return render(request, template_name='errors/pages/500.html', context={})
+    return render(request, template_name='errors/pages/500.html')
 
 
 def unauthorizedaccess(request, exception):
-    return render(request, template_name='errors/pages/403.html', context={})
+    return render(request, template_name='errors/pages/403.html')
